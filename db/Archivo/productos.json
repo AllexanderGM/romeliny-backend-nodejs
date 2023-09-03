@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1AWWBC17",
+        "timestamp": "17/1/2023, 10:56:34 a. m.",
+        "nombre": "Ejemplo",
+        "descripcion": "Esto es un ejemplo de producto",
+        "codigo": "ejem01",
+        "foto": "/imgProductos/rsvkETNx_400x400.jpg",
+        "categoria": "Formal",
+        "precio": "1234",
+        "stock": "1234"
+    },
+    {
+        "id": "vJ8Dl2jR",
+        "timestamp": "17/1/2023, 7:42:32 p. m.",
+        "nombre": "Gato",
+        "descripcion": "Esto es un gatico",
+        "codigo": "T34VC",
+        "foto": "//../public/imgProductos/4k-cyberpunk-cyber-city-futuristic-city-2185593-wallhere.com.jpg",
+        "categoria": "Deportivo",
+        "precio": "123",
+        "stock": "123"
+    },
+    {
+        "id": "rPpXsQ3G",
+        "timestamp": "17/1/2023, 11:18:52 a. m.",
+        "nombre": "Yo",
+        "descripcion": "Soy yo jaja",
+        "codigo": "XT4NQ",
+        "foto": "/imgProductos/14963366_1122419691145397_1185161763336715101_n.jpg",
+        "categoria": "Casual",
+        "precio": "12345",
+        "stock": "12345"
+    },
+    {
+        "id": "MRulO5oQ",
+        "timestamp": "17/1/2023, 1:41:54 p. m.",
+        "nombre": "asdas",
+        "descripcion": "asda",
+        "codigo": "asda",
+        "foto": "/imgProductos/IMG_20221004_103516.jpg",
+        "categoria": "Casual",
+        "precio": "1123",
+        "stock": "1231"
+    },
+    {
+        "id": "7kOEMcD4",
+        "timestamp": "17/1/2023, 7:42:49 p. m.",
+        "nombre": "Santiago",
+        "descripcion": "Esto es un ejemplo de producto",
+        "codigo": "XT4NQ",
+        "foto": "/imgProductos/WhatsApp Image 2023-01-15 at 11.13.53 PM.jpeg",
+        "categoria": "Formal",
+        "precio": "1",
+        "stock": "5"
+    }
+]

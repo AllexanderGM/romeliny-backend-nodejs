@@ -1,0 +1,18 @@
+{
+  "id": "mensajes",
+  "mensajes": [
+    {
+      "id": 1,
+      "author": {
+        "id": "romeliny@gmail.com",
+        "nombre": "Romeliny",
+        "apellido": "Calzado",
+        "edad": 0,
+        "alias": "Romeliny",
+        "avatar": "https://romeliny.netlify.app/90c0997ec0f113314a37.svg"
+      },
+      "text": "Si necesitas soporte, envia un mensaje y mantente en linea. Estamos felices de poderte ayudar 🫡",
+      "hora": "AL inicio de los tiempos"
+    }
+  ]
+}
