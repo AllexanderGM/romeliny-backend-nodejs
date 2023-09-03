@@ -34,7 +34,7 @@ router.post(
         failureRedirect: "",
     }),
     function (req, res) {
-        res.status(STATUS_CODE.OK).send({ session: true });
+        res.status(STATUS_CODE.OK).send({ session: true, user: req.user });
     }
 );
 
