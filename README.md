@@ -1,4 +1,4 @@
-# Tercera entrega del proyecto final
+# Backend para romeliny en Node Js con Express
 
 Es un servidor web de un eCommerce basado en Node.js y el módulo de Express. Este proyecto implementa una interfaz backend API con la arquitectura de software RESTful construyendo los verbos CRUD. Se maneja 2 rutas diferentes: `'/productos'` y `'/carrito'`, ademas cuenta con funcionalidades diferentes para usuarios y administradores con registro y login guardando los datos de usuario en una data base en Mongo DB.
 
