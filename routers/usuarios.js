@@ -34,6 +34,7 @@ router.post(
         failureRedirect: "",
     }),
     function (req, res) {
+        req.user.password = undefined;
         res.status(STATUS_CODE.OK).send({ session: true, user: req.user });
     }
 );
