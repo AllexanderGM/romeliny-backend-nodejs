@@ -9,6 +9,8 @@ const productos = new Schema({
     img: { type: String, required: true },
     price: { type: Number, required: true },
     stock: { type: Number, required: true },
+    colors: { type: [String], default: [] },
+    sizes: { type: [String], default: [] },
 });
 
 export default mongoose.model("productos", productos);
