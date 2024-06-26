@@ -3,7 +3,6 @@
 // --> 🌍 Server web 🌍 <--
 import express from "express"; // Framework para crear servidores web
 import cors from "cors"; // Control de acceso HTTP
-import debug from "debug"; // Configuraciones para la depuración
 import http from "http"; // Funciones del protocolo
 import createError from "http-errors"; // Manejador de errores HTTP
 
@@ -115,11 +114,4 @@ function onError(error) {
         default:
             throw error;
     }
-}
-
-// --> Escucha de eventos para el evento de "escucha" del servidor HTTP.
-function onListening() {
-    const addr = server.address();
-    const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
-    debug(`Listening on ${bind}`);
 }
