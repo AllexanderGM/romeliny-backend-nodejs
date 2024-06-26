@@ -5,8 +5,7 @@ import HandlerController from "../handlers/controllers.handler.js";
 import MeliService from "../services/meliService.js";
 
 class InfoController {
-    static CONTEXT = "información general";
-    static handler = new HandlerController(this.CONTEXT);
+    static handler = new HandlerController("información general");
 
     // Controlador para obtener el estado de la API
     static async getApiStatus() {

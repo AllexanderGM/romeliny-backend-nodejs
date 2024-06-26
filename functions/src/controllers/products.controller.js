@@ -2,8 +2,7 @@ import HandlerController from "../handlers/controllers.handler.js";
 import MeliService from "../services/meliService.js";
 
 class ProductsController {
-    static CONTEXT = "información general";
-    static handler = new HandlerController(this.CONTEXT);
+    static handler = new HandlerController("información general");
 
     // Obtener todos los productos
     static async getAllProducts() {

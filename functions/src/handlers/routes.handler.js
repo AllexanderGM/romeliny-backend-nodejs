@@ -1,16 +1,9 @@
 import EncryptData from "../utils/encryptData.js";
 
-class HandlerRoutes {
+export default class HandlerRoutes {
     constructor(globalContext) {
         this.context = `ROUTES - ${globalContext}`;
     }
-
-    /**
-     * Ejecuta una ruta asincrónico y maneja errores de manera uniforme.
-     * @param {string} specificContext Contexto específico de la ruta.
-     * @param {function} route Función asincrónica que representa e la ruta a ejecutar.
-     * @returns {Promise<{status: boolean, data?: any, error?: {context: string, message: string}}>}
-     */
 
     async execute(specificContext, route, encrypt = false) {
         try {
@@ -54,5 +47,3 @@ class HandlerRoutes {
         }
     }
 }
-
-export default HandlerRoutes;

@@ -1,7 +1,7 @@
 // meliService.js
 import HandlerServices from "../handlers/services.handler.js";
 
-class MeliService {
+export default class MeliService {
     static MELI_SELLER_ID = process.env.MELI_SELLER_ID;
     static MELI_API = process.env.MELI_API;
 
@@ -90,5 +90,3 @@ class MeliService {
         return response.json();
     }
 }
-
-export default MeliService;
