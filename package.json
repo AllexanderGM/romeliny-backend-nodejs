@@ -21,7 +21,7 @@
         "express-useragent": "^1.0.15",
         "http-errors": "^2.0.0",
         "minimist": "^1.2.8",
-        "node-fetch": "^3.3.2",
+        
         "normalizr": "^3.6.2"
     },
     "devDependencies": {

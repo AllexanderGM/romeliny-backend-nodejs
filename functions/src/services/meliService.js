@@ -1,5 +1,5 @@
 import process from "process";
-import fetch from "node-fetch";
+/* import fetch from "node-fetch"; */
 
 import HandlerServices from "../handlers/services.handler.js";
 

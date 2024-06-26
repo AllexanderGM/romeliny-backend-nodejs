@@ -44,11 +44,9 @@ app.set("port", PORT);
 // --> Middleware de aplicación <--
 
 app.use(cors()); // Control de acceso HTTP
-app.use(logger("dev")); // Registro en la aplicación [Logs, alerts, etc]
 app.use(cookieParser()); // Cookies encriptadas
 app.use(express.json()); // Pasa de JSON a objeto
 app.use(express.urlencoded({ extended: true })); // Pasa rutas a objeto
-app.use(express.static(path.join(__dirname, "public"))); // Define una carpeta pública
 
 // * ----- RUTAS DE APLICACIÓN ----- * \\
 
@@ -83,7 +81,6 @@ server.listen(PORT, () => {
 });
 
 server.on("error", onError);
-server.on("listening", onListening);
 
 //* ----- FUNCIONES ----- *\\
 
