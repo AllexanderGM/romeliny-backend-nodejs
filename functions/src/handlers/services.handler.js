@@ -1,4 +1,4 @@
-class HandlerServices {
+export default class HandlerServices {
     constructor(globalContext) {
         this.context = `SERVICE - ${globalContext}`;
     }
@@ -24,5 +24,3 @@ class HandlerServices {
         }
     }
 }
-
-export default HandlerServices;
