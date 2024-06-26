@@ -1,25 +1,17 @@
-import process from "process";
-
+// meliService.js
 import HandlerServices from "../handlers/services.handler.js";
 
-const CONTEXT = "MercadoLibre";
-const handler = new HandlerServices(CONTEXT);
-
 class MeliService {
-    // Configuración estática
     static MELI_SELLER_ID = process.env.MELI_SELLER_ID;
-    static MELI_AUTH_URL = process.env.MELI_AUTH_URL;
     static MELI_API = process.env.MELI_API;
-    static MELI_APP_ID = process.env.MELI_APP_ID;
-    static MELI_CLIENT_SECRET = process.env.MELI_CLIENT_SECRET;
-    static MELI_REDIRECT_URI = process.env.MELI_REDIRECT_URI;
-    static MELI_CODE = process.env.MELI_CODE;
+
+    static handler = new HandlerServices("MercadoLibre");
 
     // Verifica el servicio de MercadoLibre.
     static async checkMeliService() {
         const nameMethod = "verifica servicio";
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.getUserData();
             if (!data.status) throw new Error("servicio no disponible");
             return "servicio disponible";
@@ -31,7 +23,7 @@ class MeliService {
         const nameMethod = "obtener datos de usuario";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.fetchGet(apiUrl);
             if (data.seller === undefined) throw new Error("no se encuentra el usuario");
             return data.seller;
@@ -43,7 +35,7 @@ class MeliService {
         const nameMethod = "obtener filtros de usuario";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.fetchGet(apiUrl);
             if (data.available_filters.length <= 0) throw new Error("no se encuentran filtros");
             return data.available_filters;
@@ -55,7 +47,7 @@ class MeliService {
         const nameMethod = "obtener productos";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.fetchGet(apiUrl);
             if (data.results.length <= 0) throw new Error("no se encuentran productos");
             return data.results;
@@ -67,7 +59,7 @@ class MeliService {
         const nameMethod = "obtener producto por ID";
         const apiUrl = `${this.MELI_API}/items/${id}`;
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.fetchGet(apiUrl);
             if (data.id === undefined) throw new Error("no se encuentra el producto");
             return data;
@@ -79,14 +71,12 @@ class MeliService {
         const nameMethod = "obtener categorías de producto";
         const apiUrl = `${this.MELI_API}/categories/${id}`;
 
-        return await handler.execute(nameMethod, async () => {
+        return await this.handler.execute(nameMethod, async () => {
             const data = await this.fetchGet(apiUrl);
             if (data.id === undefined) throw new Error("no se encuentra las categorías del producto");
             return data;
         });
     }
-
-    /* --------- UTILIDADES --------- */
 
     // Función para realizar solicitudes GET
     static async fetchGet(url) {
