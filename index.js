@@ -13,7 +13,6 @@ import path from "path"; // Manejo de rutas de archivos
 import minimist from "minimist"; // Manejo de parámetros de entrada
 
 // --> 🧺 Middleware 🧺 <--
-import busboy from "connect-busboy"; // Formularios con archivos
 import cookieParser from "cookie-parser"; // Uso de cookies encriptadas
 import logger from "morgan"; // Manejar registros en la aplicación
 
@@ -52,7 +51,6 @@ app.set("port", PORT);
 // --> Middleware de aplicación <--
 
 app.use(cors()); // Control de acceso HTTP
-app.use(busboy()); // Formulario con archivos
 app.use(logger("dev")); // Registro en la aplicación [Logs, alerts, etc]
 app.use(cookieParser()); // Cookies encriptadas
 app.use(express.json()); // Pasa de JSON a objeto
