@@ -2,16 +2,17 @@ import HandlerController from "../handlers/controllers.handler.js";
 import MeliService from "../services/meliService.js";
 
 class ProductsController {
-    static handler = new HandlerController("información general");
-
-    constructor() {}
+    constructor() {
+        this.handler = new HandlerController("información general");
+        this.meli = new MeliService();
+    }
 
     // Obtener todos los productos
-    static async getAllProducts() {
+    async getAllProducts() {
         const nameMethod = "Obtener productos";
 
         return await this.handler.execute(nameMethod, async () => {
-            const service = await MeliService.getAllProducts();
+            const service = await this.meli.getAllProducts();
             if (!service.status) throw new Error("no se obtuvieron los productos");
             const products = service.data;
 
@@ -34,14 +35,14 @@ class ProductsController {
     }
 
     // Obtener un solo producto por ID
-    static async getProductById(id) {
+    async getProductById(id) {
         const nameMethod = "Obtener productos";
         const idRegex = /^MCO\d+$/;
 
         return await this.handler.execute(nameMethod, async () => {
             if (!idRegex.test(id)) throw new Error("ID de producto inválido");
 
-            const service = await MeliService.getProductById(id);
+            const service = await this.meli.getProductById(id);
             if (!service.status) throw new Error("no se encontró el producto");
 
             const product = service.data;

@@ -5,16 +5,17 @@ import HandlerController from "../handlers/controllers.handler.js";
 import MeliService from "../services/meliService.js";
 
 class InfoController {
-    static handler = new HandlerController("información general");
-
-    constructor() {}
+    constructor() {
+        this.handler = new HandlerController("información general");
+        this.meli = new MeliService();
+    }
 
     // Controlador para obtener el estado de la API
-    static async getApiStatus() {
+    async getApiStatus() {
         const nameMethod = "verificar API";
 
         return await this.handler.execute(nameMethod, async () => {
-            const service = await MeliService.checkMeliService();
+            const service = await this.meli.checkMeliService();
             if (!service.status) throw new Error("no se pudo verificar la API");
 
             return {
@@ -33,7 +34,7 @@ class InfoController {
     }
 
     // Controlador para obtener la información del sistema
-    static async getSystemInfo() {
+    async getSystemInfo() {
         const nameMethod = "información del sistema";
 
         return await this.handler.execute(nameMethod, async () => {
@@ -53,7 +54,7 @@ class InfoController {
     }
 
     // Controlador para obtener las métricas del sistema
-    static async getSystemMetrics() {
+    async getSystemMetrics() {
         const nameMethod = "métricas del sistema";
 
         return await this.handler.execute(nameMethod, async () => {
@@ -78,7 +79,7 @@ class InfoController {
     /* --------- UTILIDADES --------- */
 
     // Método para formatear el tiempo de uptime
-    static formatUptime(seconds) {
+    formatUptime(seconds) {
         const days = Math.floor(seconds / (3600 * 24));
         const hours = Math.floor((seconds % (3600 * 24)) / 3600);
         const minutes = Math.floor((seconds % 3600) / 60);

@@ -6,13 +6,14 @@ import HandlerRoutes from "../handlers/routes.handler.js";
 import InfoController from "../controllers/info.controller.js";
 
 const handler = new HandlerRoutes("información general");
+const info = new InfoController();
 
 //* Rutas
 
 // -> Estado de la API
 router.get("/", async (req, res) => {
     const nameMethod = "verificar API";
-    const data = await handler.execute(nameMethod, async () => await InfoController.getApiStatus());
+    const data = await handler.execute(nameMethod, async () => await info.getApiStatus());
 
     data.status
         ? res.status(STATUS_CODE.OK).json(data.response)
@@ -22,7 +23,7 @@ router.get("/", async (req, res) => {
 // -> Información del sistema
 router.get("/system", async (req, res) => {
     const nameMethod = "información del sistema";
-    const data = await handler.execute(nameMethod, async () => await InfoController.getSystemInfo());
+    const data = await handler.execute(nameMethod, async () => await info.getSystemInfo());
 
     data.status
         ? res.status(STATUS_CODE.OK).json(data.response)
@@ -32,7 +33,7 @@ router.get("/system", async (req, res) => {
 // -> Métricas del sistema
 router.get("/metrics", async (req, res) => {
     const nameMethod = "métricas del sistema";
-    const data = await handler.execute(nameMethod, async () => await InfoController.getSystemMetrics());
+    const data = await handler.execute(nameMethod, async () => await info.getSystemMetrics());
 
     data.status
         ? res.status(STATUS_CODE.OK).json(data.response)

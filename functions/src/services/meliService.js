@@ -2,15 +2,14 @@
 import HandlerServices from "../handlers/services.handler.js";
 
 export default class MeliService {
-    static MELI_SELLER_ID = process.env.MELI_SELLER_ID;
-    static MELI_API = process.env.MELI_API;
-
-    static handler = new HandlerServices("MercadoLibre");
-
-    constructor() {}
+    constructor() {
+        this.MELI_SELLER_ID = process.env.MELI_SELLER_ID;
+        this.MELI_API = process.env.MELI_API;
+        this.handler = new HandlerServices("MercadoLibre");
+    }
 
     // Verifica el servicio de MercadoLibre.
-    static async checkMeliService() {
+    async checkMeliService() {
         const nameMethod = "verifica servicio";
 
         return await this.handler.execute(nameMethod, async () => {
@@ -21,7 +20,7 @@ export default class MeliService {
     }
 
     // Obtener datos del usuario
-    static async getUserData() {
+    async getUserData() {
         const nameMethod = "obtener datos de usuario";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
@@ -33,7 +32,7 @@ export default class MeliService {
     }
 
     // Obtener los filtros de un usuario
-    static async getUserFilters() {
+    async getUserFilters() {
         const nameMethod = "obtener filtros de usuario";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
@@ -45,7 +44,7 @@ export default class MeliService {
     }
 
     // Obtener todos los productos
-    static async getAllProducts() {
+    async getAllProducts() {
         const nameMethod = "obtener productos";
         const apiUrl = `${this.MELI_API}/sites/MCO/search?seller_id=${this.MELI_SELLER_ID}`;
 
@@ -57,7 +56,7 @@ export default class MeliService {
     }
 
     // Obtener un producto por ID
-    static async getProductById(id) {
+    async getProductById(id) {
         const nameMethod = "obtener producto por ID";
         const apiUrl = `${this.MELI_API}/items/${id}`;
 
@@ -69,7 +68,7 @@ export default class MeliService {
     }
 
     // Obtener las categorías de un producto
-    static async getProductCategories(id) {
+    async getProductCategories(id) {
         const nameMethod = "obtener categorías de producto";
         const apiUrl = `${this.MELI_API}/categories/${id}`;
 
@@ -81,7 +80,7 @@ export default class MeliService {
     }
 
     // Función para realizar solicitudes GET
-    static async fetchGet(url) {
+    async fetchGet(url) {
         const requestOptions = {
             method: "GET",
             redirect: "follow",

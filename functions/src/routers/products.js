@@ -7,6 +7,7 @@ import HandlerRoutes from "../handlers/routes.handler.js";
 import ProductsController from "../controllers/products.controller.js";
 
 const handler = new HandlerRoutes("Productos");
+const products = new ProductsController();
 
 /* ----- Rutas ----- */
 
@@ -15,7 +16,7 @@ router.get("/", async (req, res) => {
     const nameMethod = "todos los productos";
     const data = await handler.execute(
         nameMethod,
-        async () => await ProductsController.getAllProducts(),
+        async () => await products.getAllProducts()
         /* "encrypt-json" */
     );
 
@@ -30,7 +31,7 @@ router.get("/:id", async (req, res) => {
     const id = req.params.id;
     const data = await handler.execute(
         nameMethod,
-        async () => await ProductsController.getProductById(id),
+        async () => await products.getProductById(id)
         /* "encrypt-json" */
     );
 
