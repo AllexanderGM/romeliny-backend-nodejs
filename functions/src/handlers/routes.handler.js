@@ -1,4 +1,3 @@
-import logger from "../utils/logger.js";
 import EncryptData from "../utils/encryptData.js";
 
 class HandlerRoutes {
@@ -41,8 +40,6 @@ class HandlerRoutes {
                 },
             };
         } catch (error) {
-            /* logger.error(`${this.context} | ${specificContext}`, { stack: error.stack }); */
-
             return {
                 status: false,
                 response: {

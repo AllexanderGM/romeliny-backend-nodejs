@@ -8,7 +8,6 @@ import http from "http"; // Funciones del protocolo
 import createError from "http-errors"; // Manejador de errores HTTP
 
 // --> 🛠️ Utilidades 🛠️ <--
-import { fileURLToPath } from "url"; // Manejo de rutas con PATH
 import path from "path"; // Manejo de rutas de archivos
 import minimist from "minimist"; // Manejo de parámetros de entrada
 

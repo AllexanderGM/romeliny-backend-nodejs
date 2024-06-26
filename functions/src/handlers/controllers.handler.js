@@ -1,5 +1,3 @@
-import logger from "../utils/logger.js";
-
 class HandlerController {
     constructor(globalContext) {
         this.context = `CONTROLLER - ${globalContext}`;
@@ -20,7 +18,6 @@ class HandlerController {
                 data,
             };
         } catch (error) {
-            /* logger.error(`${this.context} | ${specificContext}`, { stack: error.stack }); */
             return {
                 status: false,
                 error: {

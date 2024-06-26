@@ -27,8 +27,7 @@
         "morgan": "~1.9.1",
         "node-fetch": "^3.3.2",
         "normalizr": "^3.6.2",
-        "vary": "^1.1.2",
-        "winston": "^3.13.0"
+        "vary": "^1.1.2"
     },
     "devDependencies": {
         "dotenv": "^16.0.2",

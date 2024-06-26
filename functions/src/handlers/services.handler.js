@@ -1,5 +1,3 @@
-import logger from "../utils/logger.js";
-
 class HandlerServices {
     constructor(globalContext) {
         this.context = `SERVICE - ${globalContext}`;
@@ -16,7 +14,6 @@ class HandlerServices {
             const data = await serviceFunction();
             return { status: true, data };
         } catch (error) {
-            /* logger.error(`${this.context} | ${specificContext}`, { stack: error.stack }); */
             return {
                 status: false,
                 error: {
