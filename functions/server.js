@@ -38,7 +38,6 @@ const PORT = normalizePort(NODE_PORT);
 const ENV = process.env.NODE_ENV || "development";
 
 // --> Se configura las rutas path
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // * ----- SE INICIA EL SERVIDOR EN EXPRESS ----- * \\
