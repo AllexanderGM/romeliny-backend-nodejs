@@ -13,7 +13,6 @@ import minimist from "minimist"; // Manejo de parámetros de entrada
 
 // --> 🧺 Middleware 🧺 <--
 import cookieParser from "cookie-parser"; // Uso de cookies encriptadas
-import logger from "morgan"; // Manejar registros en la aplicación
 
 // --> ♾️ Rutas de la API ♾️ <--
 import infoRouter from "./src/routers/info.js";

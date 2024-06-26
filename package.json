@@ -24,10 +24,8 @@
         "express-useragent": "^1.0.15",
         "http-errors": "~1.6.3",
         "minimist": "^1.2.7",
-        "morgan": "~1.9.1",
         "node-fetch": "^3.3.2",
-        "normalizr": "^3.6.2",
-        "vary": "^1.1.2"
+        "normalizr": "^3.6.2"
     },
     "devDependencies": {
         "dotenv": "^16.0.2",
