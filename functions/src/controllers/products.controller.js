@@ -4,6 +4,8 @@ import MeliService from "../services/meliService.js";
 class ProductsController {
     static handler = new HandlerController("información general");
 
+    constructor() {}
+
     // Obtener todos los productos
     static async getAllProducts() {
         const nameMethod = "Obtener productos";

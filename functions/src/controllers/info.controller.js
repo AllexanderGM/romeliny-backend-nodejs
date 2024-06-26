@@ -7,6 +7,8 @@ import MeliService from "../services/meliService.js";
 class InfoController {
     static handler = new HandlerController("información general");
 
+    constructor() {}
+
     // Controlador para obtener el estado de la API
     static async getApiStatus() {
         const nameMethod = "verificar API";

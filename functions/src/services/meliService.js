@@ -7,6 +7,8 @@ export default class MeliService {
 
     static handler = new HandlerServices("MercadoLibre");
 
+    constructor() {}
+
     // Verifica el servicio de MercadoLibre.
     static async checkMeliService() {
         const nameMethod = "verifica servicio";
