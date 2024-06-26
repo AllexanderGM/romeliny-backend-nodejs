@@ -2,16 +2,16 @@
     "name": "backend_para_romeliny",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "functions/server.js",
     "type": "module",
     "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon -r dotenv/config ./functions/index.js",
-        "dev:wait": "npx nodemon --exec 'node -r dotenv/config' ./functions/index.js",
+        "start": "node ./functions/server.js",
+        "dev": "nodemon -r dotenv/config ./functions/server.js",
+        "dev:wait": "npx nodemon --exec 'node -r dotenv/config' ./functions/server.js",
         "build": "netlify deploy --prod"
     },
     "keywords": [],
-    "author": "",
+    "author": "alexander gavilán",
     "license": "ISC",
     "dependencies": {
         "cookie-parser": "~1.4.4",
