@@ -16,7 +16,7 @@ class HandlerServices {
             const data = await serviceFunction();
             return { status: true, data };
         } catch (error) {
-            logger.error(`${this.context} | ${specificContext}`, { stack: error.stack });
+            /* logger.error(`${this.context} | ${specificContext}`, { stack: error.stack }); */
             return {
                 status: false,
                 error: {
