@@ -77,7 +77,7 @@ const server = http.createServer(app);
 
 server.listen(PORT, () => {
     console.log(`Servidor http está escuchando en el puerto ${server.address().port}`);
-    console.log(`http://localhost:${server.address().port}`);
+    console.log(`http://localhost:${server.address().port}${urlNetlify}`);
     console.log(`Environment: ${ENV}`);
 });
 
