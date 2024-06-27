@@ -23,7 +23,8 @@
         "express-useragent": "^1.0.15",
         "http-errors": "^2.0.0",
         "minimist": "^1.2.8",
-        "normalizr": "^3.6.2"
+        "normalizr": "^3.6.2",
+        "serverless": "^4.1.6"
     },
     "devDependencies": {
         "dotenv": "^16.4.5",

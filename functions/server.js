@@ -1,13 +1,13 @@
 // * ----- Dependencias ----- * \\
 
 // --> 🌍 Server web 🌍 <--
+import serverless from "serverless-http";
 import express from "express"; // Framework para crear servidores web
 import cors from "cors"; // Control de acceso HTTP
 import http from "http"; // Funciones del protocolo
 import createError from "http-errors"; // Manejador de errores HTTP
 
 // --> 🛠️ Utilidades 🛠️ <--
-import path from "path"; // Manejo de rutas de archivos
 import minimist from "minimist"; // Manejo de parámetros de entrada
 
 // --> 🧺 Middleware 🧺 <--
@@ -112,3 +112,5 @@ function onError(error) {
             throw error;
     }
 }
+
+export const handler = serverless(app);
