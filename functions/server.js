@@ -49,9 +49,10 @@ app.use(express.json()); // Pasa de JSON a objeto
 app.use(express.urlencoded({ extended: true })); // Pasa rutas a objeto
 
 // * ----- RUTAS DE APLICACIÓN ----- * \\
+const urlNetlify = "/.netlify/functions/server";
 
-app.use("/", infoRouter);
-app.use("/products", productsRouter);
+app.use(urlNetlify + "/", infoRouter);
+app.use(urlNetlify + "/products", productsRouter);
 
 // --> Middleware para manejar rutas no implementadas
 app.use((req, res, next) => {
