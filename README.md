@@ -18,4 +18,5 @@ Es un servidor web de un eCommerce basado en Node.js y el módulo de Express. Es
 
 -   Para utilizar postman se recomienda usar el archivo: `Ecommerse Romeliny.postman_collection.json`
 
-https://romeliny-dev.fl0.io/
+[deploy](https://romeliny-backend.netlify.app/.netlify/functions/server)
+[development](https://deployment--romeliny-backend.netlify.app/.netlify/functions/server)
