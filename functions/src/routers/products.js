@@ -14,11 +14,7 @@ const products = new ProductsController();
 // -> Ver todos los productos
 router.get("/", async (req, res) => {
     const nameMethod = "todos los productos";
-    const data = await handler.execute(
-        nameMethod,
-        async () => await products.getAllProducts()
-        /* "encrypt-json" */
-    );
+    const data = await handler.execute(nameMethod, async () => await products.getAllProducts(), "encrypt-json");
 
     data.status
         ? res.status(STATUS_CODE.OK).json(data.response)
@@ -29,11 +25,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     const nameMethod = "producto por ID";
     const id = req.params.id;
-    const data = await handler.execute(
-        nameMethod,
-        async () => await products.getProductById(id)
-        /* "encrypt-json" */
-    );
+    const data = await handler.execute(nameMethod, async () => await products.getProductById(id), "encrypt-json");
 
     data.status
         ? res.status(STATUS_CODE.OK).json(data.response)

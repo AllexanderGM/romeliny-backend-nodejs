@@ -81,15 +81,7 @@ function formatVariation(variation) {
 
 // Formatear atributos
 function formatAttributes(attribute) {
-    const attributesKeys = [
-        "AGE_GROUP",
-        "BRAND",
-        "GENDER",
-        "ITEM_CONDITION",
-        "MODEL",
-        "FOOTWEAR_MATERIAL",
-        "OUTSOLE_MATERIAL",
-    ];
+    const attributesKeys = ["AGE_GROUP", "GENDER", "ITEM_CONDITION", "MODEL", "FOOTWEAR_MATERIAL", "OUTSOLE_MATERIAL"];
     const values = attribute.values.map((value) => value.name);
 
     return attributesKeys.includes(attribute.id) ? { id: attribute.id, name: attribute.name, value: values } : null;

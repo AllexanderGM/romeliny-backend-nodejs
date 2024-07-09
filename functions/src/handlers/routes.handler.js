@@ -7,9 +7,9 @@ export default class HandlerRoutes {
 
     async execute(specificContext, route, encrypt = false) {
         try {
-            let data = await route();
-            if (!data.status)
-                throw { message: `no se pudo ejecutar la ruta [ ${specificContext} ]`, details: data.error };
+            const info = await route();
+            let data = info.data;
+            if (!info.status) throw { message: `no se pudo ejecutar  [ ${specificContext} ]`, details: info.error };
 
             switch (encrypt) {
                 case "encrypt-text":
